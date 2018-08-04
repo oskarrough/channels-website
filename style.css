@@ -1,0 +1,153 @@
+/* Webfonts */
+
+@font-face {
+  font-family: "Univers";
+  src: url("https://cdn.glitch.com/2a5a8656-e659-4fbd-ad71-fb5f077da4b9%2Funivers.woff2?1533291851318") format("woff2"),
+       url("https://cdn.glitch.com/2a5a8656-e659-4fbd-ad71-fb5f077da4b9%2Funivers.woff?1533291851161") format("woff");
+}
+
+
+/* Colors */
+
+:root {
+  --color-lightgrey: #f6f6f6;
+  --color-dark: rgb(20, 20, 20);
+  --color-red: rgb(216, 52, 57);
+  --color-lightblue: rgb(160, 206, 219);
+  --color-yellow: rgb(243, 219, 98);
+  --color-green: rgb(75, 174, 96);
+  --color-purple: rgb(186, 178, 203);
+  --color-orange: rgb(227, 114, 76);
+  --color-grey: rgb(198, 198, 187);
+  --color-darkblue: rgb(48, 78, 141);
+}
+
+/* Global styles */
+
+html {
+  font-family: Univers, system-ui, sans-serif;
+  color: var(--color-dark);
+  background: white;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+}
+
+section {
+  padding: 3vh 3vw;
+  min-height: 30vh;
+}
+
+h1,
+h2,
+h3 {
+  margin: 1em 0;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+a {
+  color: black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+
+/* Utilities */
+
+.u-spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.u-rotate {
+  transform: rotate(0.6deg);
+}
+
+.u-rotateList > *:nth-child(even) {
+  transform: rotate(0.6deg);
+  transform-origin: left;
+}
+
+.u-rotateList > *:nth-child(odd) {
+  transform: rotate(0.3deg);
+  transform-origin: left;
+}
+
+.bg-dark { background: var(--color-dark); }
+.bg-red { background: var(--color-red); }
+.bg-lightblue { background: var(--color-lightblue); }
+.bg-yellow { background: var(--color-yellow); }
+.bg-green { background: var(--color-green); }
+.bg-purple { background: var(--color-purple); }
+.bg-orange { background: var(--color-orange); }
+.bg-grey { background: var(--color-grey); }
+.bg-lightgrey { background: var(--color-lightgrey); }
+.bg-darkblue { background: var(--color-darkblue); }
+
+
+/* Tour dates list */
+
+.TourDates {
+  padding-left: 0;
+  line-height: 1.8;
+}
+
+.TourDates li,
+.TourDates li > a {
+  display: flex;
+  align-items: baseline;
+}
+
+.TourDates li > a {
+  text-decoration: none;
+}
+
+.TourDates li > a h3 {
+  text-decoration: underline;
+}
+
+.TourDates li > a:hover {
+  background: white;
+}
+
+.TourDates li::before {
+  content: "";
+}
+
+.TourDates h3 {
+  margin: 0 0.5em;
+}
+
+.TourDates span {
+  opacity: 0.6;
+}
+
+
+.ImageFeed-list {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-end;
+}
+.ImageFeed-item {
+  max-width: 50%;
+  margin-bottom: 1.5em;
+}
+
+@media (min-width: 700px) {
+  .ImageFeed-item {
+    max-width: 160px;
+  }
+}
