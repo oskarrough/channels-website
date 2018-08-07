@@ -151,27 +151,19 @@
 		<!--  green,purple,orange, grey,darkblue  -->
 
 		<script>
-			;(function($doc, $win) {
-				var screenWidth = $win.screen.width / 2
-				var screenHeight = $win.screen.height / 2
-				var el = $doc.querySelector('img')
-				var validPropertyPrefix = ''
-				var otherProperty = 'perspective(2000px)'
+			;(function(doc, win) {
+				var screenWidth = win.screen.width / 2
+				var screenHeight = win.screen.height / 2
+				var el = doc.querySelector('img')
 
-				if (typeof el.style.webkitTransform == 'string') {
-					validPropertyPrefix = 'webkitTransform'
-				} else if (typeof el.style.MozTransform == 'string') {
-					validPropertyPrefix = 'MozTransform'
-				}
-
-				$doc.addEventListener('mousemove', function(e) {
+				doc.addEventListener('mousemove', function(e) {
 					var centroX = e.clientX - screenWidth
-					var centroY = screenHeight - (e.clientY + 13)
+					var centroY = screenHeight - e.clientY
 					var degX = centroX * 0.01
 					var degY = centroY * 0.02
 					// Set rotation
-					el.style[validPropertyPrefix] =
-						otherProperty + 'rotateY(' + degX + 'deg)  rotateX(' + degY + 'deg)'
+					el.style['transform'] =
+						'perspective(2000px)' + 'rotateY(' + degX + 'deg)  rotateX(' + degY + 'deg)'
 				})
 			})(document, window)
 		</script>
